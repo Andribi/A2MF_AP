@@ -22,11 +22,13 @@ feat_names = ['age', 'gender', 'race']
 for pic in os.listdir(UTK_face):
     features = pic.split('_')[:-1]
     features_dict = {}
+    print(features)
     for i in range(len(features)):
-        features_dict[feat_names[i]] = features[i]
+
+        features_dict[feat_names[i]] = int(features[i])
     res[pic] = features_dict
 
 
-with open('utkface.json', 'w') as outfile:
-    json.dump(res, outfile)
+#with open('utkface.json', 'w') as outfile:
+#    json.dump(res, outfile)
 
